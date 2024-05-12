@@ -6,12 +6,25 @@ import org.checkerframework.checker.units.qual.A;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+
+import java.util.concurrent.TimeUnit;
+
 public class NoteCreationTest extends TestBase {
     @Test
     public void createNote() {
         app.getNavigation().GoToHomePage();
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         AccountData user = new AccountData("gismagilova402@gmail.com", "gusenica");
         app.getAuth().Login(user);
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         NoteData note = new NoteData("");
         app.getNote().AddNewNote(note);
     }

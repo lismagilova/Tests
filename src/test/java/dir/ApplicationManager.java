@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ApplicationManager {
+    private static ThreadLocal<ApplicationManager> app = new ThreadLocal<>();
     private WebDriver driver;
 
     private StringBuilder verificationErrors;
@@ -28,6 +29,15 @@ public class ApplicationManager {
         this.navigation = new NavigationHelper(this, baseURL);
         this.auth = new LoginHelper(this);
         this.note = new NoteHelper(this);
+    }
+
+    public static ApplicationManager GetInstance() {
+        if (app.get() == null) {
+            ApplicationManager newInstance = new ApplicationManager();
+//            newInstance.navigation.GoToHomePage(); // assuming GoToHomePage is public in NavigationHelper
+            app.set(newInstance);
+        }
+        return app.get();
     }
 
     public void Stop() {

@@ -14,7 +14,7 @@ public class NoteHelper extends HelperBase {
     }
 
     public void EditNote(NoteData note) {
-        driver.findElement(By.cssSelector("#noteid34498 .full")).click();
-        driver.findElement(By.cssSelector("#noteid34498 .full")).sendKeys("Первая запись!\\n");
+        driver.findElement(By.cssSelector("#noteid34836 .full")).click();
+        driver.findElement(By.cssSelector("#noteid34836 .full")).sendKeys("Первая запись!\\n");
     }
 }
