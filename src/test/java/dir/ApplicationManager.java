@@ -34,7 +34,7 @@ public class ApplicationManager {
     public static ApplicationManager GetInstance() {
         if (app.get() == null) {
             ApplicationManager newInstance = new ApplicationManager();
-//            newInstance.navigation.GoToHomePage(); // assuming GoToHomePage is public in NavigationHelper
+            newInstance.navigation.GoToHomePage();
             app.set(newInstance);
         }
         return app.get();
