@@ -3,6 +3,7 @@ package dir.helpers;
 import dir.ApplicationManager;
 import dir.model.AccountData;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 
 public class LoginHelper extends HelperBase {
     public LoginHelper(ApplicationManager applicationManager) {
@@ -19,5 +20,13 @@ public class LoginHelper extends HelperBase {
 
     public void Logout() {
         driver.findElement(By.id("mLogoff")).click();
+    }
+
+    public boolean isLoggedIn() {
+        try {
+            return driver.findElement(By.id("mLogoff")).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }
