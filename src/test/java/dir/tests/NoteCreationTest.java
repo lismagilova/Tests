@@ -3,6 +3,7 @@ import dir.model.AccountData;
 import dir.model.NoteData;
 import dir.tests.TestBase;
 import org.checkerframework.checker.units.qual.A;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -12,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 public class NoteCreationTest extends TestBase {
     @Test
     public void createNote() {
+        int before = app.getNote().getNotesCount();
+
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
@@ -19,6 +22,10 @@ public class NoteCreationTest extends TestBase {
         }
         NoteData note = new NoteData("");
         app.getNote().AddNewNote(note);
+
+        int after = app.getNote().getNotesCount();
+
+        Assert.assertEquals("Заметка не была создана", before + 1, after);
     }
 }
 

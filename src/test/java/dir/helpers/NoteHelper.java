@@ -3,6 +3,8 @@ package dir.helpers;
 import dir.ApplicationManager;
 import dir.model.NoteData;
 import org.openqa.selenium.By;
+import java.util.List;
+
 
 public class NoteHelper extends HelperBase {
     public NoteHelper(ApplicationManager applicationManager) {
@@ -16,5 +18,10 @@ public class NoteHelper extends HelperBase {
     public void EditNote(NoteData note) {
         driver.findElement(By.cssSelector("#noteid34836 .full")).click();
         driver.findElement(By.cssSelector("#noteid34836 .full")).sendKeys("Первая запись!\\n");
+    }
+
+    public int getNotesCount() {
+        List notes = driver.findElements(By.cssSelector(".notes-cont"));
+        return notes.size();
     }
 }
