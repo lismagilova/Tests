@@ -7,17 +7,15 @@ import org.openqa.selenium.Dimension;
 import javax.swing.plaf.PanelUI;
 import java.util.concurrent.TimeUnit;
 
-public class AuthorizationTest extends TestBase {
+public class LogoutTest extends TestBase {
     @Test
-    public void login() {
-        app.getNavigation().GoToHomePage();
+    public void logout() {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        AccountData user = new AccountData("gismagilova402@gmail.com", "gusenica");
-        app.getAuth().Login(user);
+        app.getAuth().Logout();
     }
 }
 

@@ -7,7 +7,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         AuthorizationTest.class,
         EditTest.class,
-        NoteCreationTest.class
-
+        NoteCreationTest.class,
+        LogoutTest.class
 })
 public class AllTests {}
