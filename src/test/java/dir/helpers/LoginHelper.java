@@ -29,4 +29,12 @@ public class LoginHelper extends HelperBase {
             return false;
         }
     }
+
+    public boolean isLoggedOut() {
+        try {
+            return driver.findElement(By.linkText("Вход")).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
 }
