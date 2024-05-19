@@ -1,6 +1,5 @@
 package dir.tests;
 
-import dir.model.AccountData;
 import dir.model.NoteData;
 import org.junit.Test;
 import java.util.concurrent.TimeUnit;
