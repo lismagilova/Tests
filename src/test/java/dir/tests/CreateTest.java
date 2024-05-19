@@ -11,12 +11,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class NoteCreationTest extends TestBase {
+public class CreateTest extends AuthBase {
 
     private NoteData noteData;
 
     // Конструктор, который принимает NoteData
-    public NoteCreationTest(NoteData noteData) {
+    public CreateTest(NoteData noteData) {
         this.noteData = noteData;
     }
     @Parameterized.Parameters

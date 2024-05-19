@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class LogoutTest extends TestBase {
+public class LogoutTest extends AuthBase {
     @Test
     public void logout() {
         try {

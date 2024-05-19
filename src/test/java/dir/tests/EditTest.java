@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 
-public class EditTest extends TestBase{
+public class EditTest extends AuthBase{
     @Test
     public void editNote() {
         String newNoteText = "Новый текст заметки";

@@ -1,6 +1,7 @@
 package dir.helpers;
 
 import dir.ApplicationManager;
+import dir.Settings;
 
 public class NavigationHelper extends HelperBase{
     private String baseURL;
@@ -11,6 +12,6 @@ public class NavigationHelper extends HelperBase{
     }
 
     public void GoToHomePage() {
-        driver.get("https://www.bumajko.ru/");
+        driver.get(Settings.getBaseURL());
     }
 }

@@ -25,7 +25,7 @@ public class ApplicationManager {
         this.driver = new FirefoxDriver();
         driver.manage().window().setSize(new Dimension(1600, 852));
         this.verificationErrors = new StringBuilder();
-        this.baseURL = "https://www.bumajko.ru/";
+        this.baseURL = Settings.getBaseURL();
         this.navigation = new NavigationHelper(this, baseURL);
         this.auth = new LoginHelper(this);
         this.note = new NoteHelper(this);
